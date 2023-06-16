@@ -1,9 +1,9 @@
 "use strict";
 import * as core from "./core.js";
 
-let myGLVertexBuffer = null;
+let mGLVertexBuffer = null;
 function get(){
-    return myGLVertexBuffer;
+    return mGLVertexBuffer;
 }
 
 //  1     0
@@ -26,13 +26,13 @@ function init(){
     let gl=core.getGL();
 
     //A - create buffer
-    mGLVertexBuffer=gl.createBuffer();
+    mGLVertexBuffer=gl.createBuffer(); //WebGL
 
     //B - bind it and activate it
-    gl.bindBuffer(gl.ARRAY_BUFFER, myGLVertexBuffer);
+    gl.bindBuffer(gl.ARRAY_BUFFER, mGLVertexBuffer);  //WebGL
 
     //C - load vertices
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(mVerticesOfSquare), gl.STATIC_DRAW);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(mVerticesOfSquare), gl.STATIC_DRAW);  //WebGL
 }
 
 function drawSquare() {
